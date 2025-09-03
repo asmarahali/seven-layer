@@ -1,4 +1,4 @@
-import SevenLayersWebsite from './componants/SevenLayersWebsite';
+import SevenLayersWebsite from './components/SevenLayersWebsite';
 
 export default function HomePage() {
   return (
