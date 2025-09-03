@@ -2,6 +2,7 @@ import SevenLayersWebsite from './components/SevenLayersWebsite';
 
 export default function HomePage() {
   return (
-    <SevenLayersWebsite />
+    // <SevenLayersWebsite />
+    <div>hello world</div>
   );
 }
