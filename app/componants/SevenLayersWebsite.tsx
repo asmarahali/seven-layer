@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
 // Define interface for SVG icon props
 interface IconProps {
@@ -211,7 +210,7 @@ const SevenLayersWebsite: React.FC = () => {
       `}</style>
 
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -226,12 +225,9 @@ const SevenLayersWebsite: React.FC = () => {
             </div>
             
             <div className="hidden md:flex space-x-8 space-x-reverse">
--              <a href="/" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>الرئيسية</a>
--              <a href="#about" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>من نحن</a>
--              <a href="#contact" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>اتصل بنا</a>
-+              <Link href="/" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>الرئيسية</Link>
-+              <a href="#about" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>من نحن</a>
-+              <a href="#contact" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>اتصل بنا</a>
+              <a href="/" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>الرئيسية</a>
+              <a href="#about" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>من نحن</a>
+              <a href="#contact" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>اتصل بنا</a>
             </div>
 
             <button 
@@ -246,12 +242,9 @@ const SevenLayersWebsite: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t">
             <div className="px-4 py-2 space-y-1">
--              <a href="/" className="block py-2 text-gray-700 hover:text-orange-500">الرئيسية</a>
--              <a href="#about" className="block py-2 text-gray-700 hover:text-orange-500">من نحن</a>
--              <a href="#contact" className="block py-2 text-gray-700 hover:text-orange-500">اتصل بنا</a>
-+              <Link href="/" className="block py-2 text-gray-700 hover:text-orange-500">الرئيسية</Link>
-+              <a href="#about" className="block py-2 text-gray-700 hover:text-orange-500">من نحن</a>
-+              <a href="#contact" className="block py-2 text-gray-700 hover:text-orange-500">اتصل بنا</a>
+              <a href="/" className="block py-2 text-gray-700 hover:text-orange-500">الرئيسية</a>
+              <a href="#about" className="block py-2 text-gray-700 hover:text-orange-500">من نحن</a>
+              <a href="#contact" className="block py-2 text-gray-700 hover:text-orange-500">اتصل بنا</a>
             </div>
           </div>
         )}
