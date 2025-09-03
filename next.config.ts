@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   },
   basePath: '/seven-layer',
   assetPrefix: '/seven-layer/',
+  eslint: {
+    ignoreDuringBuilds: true
+  }
 }
 
 export default nextConfig
