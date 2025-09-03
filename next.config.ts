@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   basePath: isProd ? `/${repo}` : "",
   assetPrefix: isProd ? `/${repo}/` : "",
-  // trailingSlash: true, // uncomment if deep-link pages (like /about) give 404
+  trailingSlash: true, // uncommented to support deep-link pages on GitHub Pages
 };
 
 export default nextConfig;
