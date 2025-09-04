@@ -246,9 +246,10 @@ const SevenLayersWebsite: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t">
             <div className="px-4 py-2 space-y-1">
-             <Link href="/" className="block py-2 text-gray-700 hover:text-orange-500">الرئيسية</Link>
-              <Link href="#about" className="block py-2 text-gray-700 hover:text-orange-500">من نحن</Link>
-              <Link href="#contact" className="block py-2 text-gray-700 hover:text-orange-500">اتصل بنا</Link>
+
++              <Link href="/" className="block py-2 text-gray-700 hover:text-orange-500">الرئيسية</Link>
++              <Link href="#about" className="block py-2 text-gray-700 hover:text-orange-500">من نحن</Link>
++              <Link href="#contact" className="block py-2 text-gray-700 hover:text-orange-500">اتصل بنا</Link>
             </div>
           </div>
         )}
