@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'; // Added import for Link
+import Image from 'next/image'; // Added import for Image
 
 // Define interface for SVG icon props
 interface IconProps {
@@ -216,18 +218,20 @@ const SevenLayersWebsite: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3 space-x-reverse">
-              <img 
-                src="/logo.png" 
-                alt="شعار الطبقات السبعة" 
-                className="w-15 h-15 object-contain"
-              />
+             <Image
+               src="/logo.png"
+               alt="شعار الطبقات السبعة"
+               width={60} // adjust size as needed
+               height={60}
+               className="object-contain"
+             />
               <span  className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>الطبقات السبعة</span>
             </div>
             
             <div className="hidden md:flex space-x-8 space-x-reverse">
-              <a href="/" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>الرئيسية</a>
-              <a href="#about" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>من نحن</a>
-              <a href="#contact" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>اتصل بنا</a>
+            <Link href="/" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>الرئيسية</Link>
+             <Link href="#about" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>من نحن</Link>
+            <Link href="#contact" className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-orange-500 transition-colors`}>اتصل بنا</Link>
             </div>
 
             <button 
@@ -242,9 +246,9 @@ const SevenLayersWebsite: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t">
             <div className="px-4 py-2 space-y-1">
-              <a href="/" className="block py-2 text-gray-700 hover:text-orange-500">الرئيسية</a>
-              <a href="#about" className="block py-2 text-gray-700 hover:text-orange-500">من نحن</a>
-              <a href="#contact" className="block py-2 text-gray-700 hover:text-orange-500">اتصل بنا</a>
+             <Link href="/" className="block py-2 text-gray-700 hover:text-orange-500">الرئيسية</Link>
+              <Link href="#about" className="block py-2 text-gray-700 hover:text-orange-500">من نحن</Link>
+              <Link href="#contact" className="block py-2 text-gray-700 hover:text-orange-500">اتصل بنا</Link>
             </div>
           </div>
         )}
