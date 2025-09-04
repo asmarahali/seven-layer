@@ -272,11 +272,14 @@ const SevenLayersWebsite: React.FC = () => {
           <div className={`mb-8 transform transition-all duration-1000 ${
             isVisible.home ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
           }`}>
+
             <Image
-              src="/logo.png" 
-              alt="شركة الطبقات السبعة" 
-              className="w-30 h-30 lg:w-40 lg:h-40 mx-auto mb-6 animate-float"
-            />
+              src="/logo.png"
+                alt="شركة الطبقات السبعة"
+                width={160}   // add numeric width
+                height={160}  // add numeric height
+                className="mx-auto mb-6 animate-float"
+              />
           </div>
           
           <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${
