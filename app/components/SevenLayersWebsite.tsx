@@ -48,11 +48,7 @@ const Star: React.FC<IconProps> = ({ className }) => (
   </svg>
 );
 
-const ArrowRight: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-  </svg>
-);
+
 
 const Menu: React.FC<IconProps> = ({ className }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,7 +272,7 @@ const SevenLayersWebsite: React.FC = () => {
           <div className={`mb-8 transform transition-all duration-1000 ${
             isVisible.home ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
           }`}>
-            <img 
+            <Image
               src="/logo.png" 
               alt="شركة الطبقات السبعة" 
               className="w-30 h-30 lg:w-40 lg:h-40 mx-auto mb-6 animate-float"
