@@ -123,6 +123,8 @@ const OurProjectsSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
+                    width={400} // Added width property
+                    height={300} // Added height property
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
