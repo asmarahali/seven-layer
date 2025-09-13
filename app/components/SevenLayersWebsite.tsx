@@ -182,6 +182,17 @@ const SevenLayersWebsite: React.FC = () => {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
+
+        @font-face {
+          font-family: 'PointArtSansSerifBold';
+          src: url('/fonts/PointArtSansSerifBold.ttf') format('truetype');
+          font-weight: bold;
+          font-style: normal;
+        }
+
+        .custom-title {
+          font-family: 'PointArtSansSerifBold', sans-serif;
+        }
       `}</style>
       
       {/* Hero Section */}
@@ -218,7 +229,8 @@ const SevenLayersWebsite: React.FC = () => {
           <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${
             isVisible.home ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up">
+            {/* Update the title with the custom font */}
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up custom-title">
               شركة الطبقات السبعة
             </h1>
             
