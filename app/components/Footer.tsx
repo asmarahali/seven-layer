@@ -1,6 +1,6 @@
 import React from 'react';
 import { Building2 } from './Icons';
-import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -13,17 +13,14 @@ const Footer: React.FC = () => {
           </div>
           <p className="text-gray-400 mb-4">نبني بثقة ... من التصميم إلى الإنجاز</p>
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
+            <a href="https://www.linkedin.com/in/%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D8%B7%D8%A8%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D8%A8%D8%B9%D8%A9-%D9%84%D9%84%D9%85%D9%82%D8%A7%D9%88%D9%84%D8%A7%D8%AA-321bb2383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
               <FaLinkedinIn className="w-5 h-5" />
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
-              <FaFacebookF className="w-5 h-5" />
             </a>
             <a href="https://www.instagram.com/mo9a.ol?igsh=MWRhbjJ5cXQwNXJuZg==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
               <FaInstagram className="w-5 h-5" />
             </a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
-              <FaTiktok className="w-5 h-5" />
+            <a href="https://wa.me/966536841337" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
+              <FaWhatsapp className="w-5 h-5" />
             </a>
             <a href="https://x.com/7tabaqat?t=_wegr-CtD8VCorGNNsvwwg&s=08" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
