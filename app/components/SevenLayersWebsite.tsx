@@ -100,7 +100,7 @@ const SevenLayersWebsite: React.FC = () => {
     { icon: <Building2 className="w-6 h-6" />, title: "السلامة", desc: "أولوية في كل موقع" },
     { icon: <Eye className="w-6 h-6" />, title: "الشفافية", desc: "التعامل الصادق والواضح" },
     { icon: <Target className="w-6 h-6" />, title: "الابتكار", desc: "حلول حديثة لمشاريع متجددة" },
-    { icon: <Users className="w-6 h-6" />, title: "العمل الجماعي", desc: "روح الفريق تصنع الإنجاز" }
+    { icon: <Users className="w-6 h-6 text-orange-500" />, title: "العمل الجماعي", desc: "روح الفريق تصنع الإنجاز" }
   ];
 
   const goals = [
@@ -112,6 +112,7 @@ const SevenLayersWebsite: React.FC = () => {
   ];
 
   return (
+    <div style={{ marginTop: '60px' }}> {/* Adjust margin to ensure it is below the navbar */}
     <div className="min-h-screen bg-white" dir="rtl">
       <style jsx>{`
         @keyframes fade-in-up {
@@ -428,12 +429,13 @@ const SevenLayersWebsite: React.FC = () => {
                 <MapPin className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold">العنوان</h3>
-              <p className="text-gray-300">المملكة العربية السعودية</p>
+              <p className="text-gray-300">المملكة العربية السعودية - الرياض - حي الريان</p>
             </div>
           </div>
         </div>
       </section>
       <Footer />
+    </div>
     </div>
   );
 };

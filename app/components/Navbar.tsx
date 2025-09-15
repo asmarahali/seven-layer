@@ -48,10 +48,10 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { href: '/', label: 'الرئيسية', id: 'home' },
-    { href: '#about', label: 'من نحن', id: 'about' },
     { href: '#contact', label: 'اتصل بنا', id: 'contact' },
     { href: '/projects', label: 'مشاريعنا', id: 'projects' },
+    { href: '#about', label: 'من نحن', id: 'about' },
+    { href: '/', label: 'الرئيسية', id: 'home' },
   ];
 
   const handleLinkClick = (href: string) => {
@@ -62,14 +62,14 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-gray-100 ${
           scrolled 
-            ? 'bg-white shadow-lg border-b border-gray-200' 
-            : 'bg-transparent'
+            ? 'shadow-lg border-b border-gray-200' 
+            : 'bg-opacity-90'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-3 lg:py-4">
+          <div className="flex justify-between items-center py-2 lg:py-3">
             {/* Logo Section */}
             <Link 
               href="/"
@@ -86,15 +86,7 @@ const Navbar = () => {
                   className="object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <span
-                className={`font-bold  text-lg lg:text-xl transition-all duration-300 ${
-                  scrolled 
-                    ? 'text-white group-hover:text-orange-500' 
-                    : 'text-white group-hover:text-orange-500'
-                } group-hover:tracking-wide`}
-              >
-                الطبقات السبعة
-              </span>
+             
             </Link>
 
             {/* Desktop Navigation */}
@@ -108,14 +100,6 @@ const Navbar = () => {
                     scrolled
                       ? 'text-gray-900 hover:text-orange-500'
                       : 'text-gray-900 hover:text-orange-500'
-                  } ${
-                    activeSection === link.href
-                      ? scrolled
-                        ? 'text-orange-600 bg-orange-50'
-                        : 'text-orange-300 bg-white/10'
-                      : scrolled
-                      ? 'text-gray-700 hover:text-orange-500 hover:bg-gray-50'
-                      : 'text-white hover:text-orange-300 hover:bg-white/10'
                   }`}
                 >
                   {link.label}
