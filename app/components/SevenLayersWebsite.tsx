@@ -413,7 +413,8 @@ const SevenLayersWebsite: React.FC = () => {
                 <Phone className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold">اتصل بنا</h3>
-              <p className="text-gray-300">+966536581079</p>
+              <p className="text-gray-300 mb-1"> 966536581079 +</p>
+              <p className="text-gray-300">966536841337 +</p>
             </div>
             
             <div className="space-y-4">
