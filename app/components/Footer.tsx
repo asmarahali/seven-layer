@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             <a href="https://www.instagram.com/mo9a.ol?igsh=MWRhbjJ5cXQwNXJuZg==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
               <FaInstagram className="w-5 h-5" />
             </a>
-            <a href="https://wa.me/966536841337" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
+            <a href="https://wa.me/966536581079" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
               <FaWhatsapp className="w-5 h-5" />
             </a>
             <a href="https://x.com/7tabaqat?t=_wegr-CtD8VCorGNNsvwwg&s=08" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition">
