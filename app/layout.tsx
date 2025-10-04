@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: " شركة الطبقات السبعة",
+  title: "شركة الطبقات السبعة",
   description: "",
  keywords: [
     "واجهات خارجية",
