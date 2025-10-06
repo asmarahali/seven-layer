@@ -107,7 +107,7 @@ export const metadata: Metadata = {
     description:
       "شركة سبع طبقات: متخصصون في تنفيذ جميع أعمال المقاولات والتشطيب والترميم والديكورات في الرياض. تركيب واجهات GRC، قرميد، رخام، تصميم هندسي، تأثيث منازل، مظلات، بناء فلل ومستودعات.",
     url: "https://www.seven7layers.com/",
-    siteName: " شركة الطبقات السبعة",
+    siteName: "شركة الطبقات السبعة",
     locale: "ar_SA",
     type: "website",
   },
