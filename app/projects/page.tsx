@@ -20,7 +20,7 @@ const OurProjectsSection = () => {
       image: `/inside/photo_${i + 1}.jpg`,
   
     })),
-    exterior: Array.from({ length: 27 }, (_, i) => ({
+    exterior: Array.from({ length: 37 }, (_, i) => ({
       id: i + 1,
       title: `تصميم خارجي ${i + 1}`,
       image: `/outside/photo_${i + 1}_2025-09-03_10-37-34.jpg`,
