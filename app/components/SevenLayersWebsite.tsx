@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'; // Added import for Link
-import Image from 'next/image'; // Added import for Image
-import Footer from './Footer';
-import { Building2, Target, Eye, Users } from './Icons';
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link"; // Added import for Link
+import Image from "next/image"; // Added import for Image
+import Footer from "./Footer";
+import { Building2, Target, Eye, Users } from "./Icons";
 
 // Define interface for SVG icon props
 interface IconProps {
@@ -14,47 +14,120 @@ interface IconProps {
 
 // Custom SVG Icons with proper TypeScript interfaces
 const CheckCircle: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
   </svg>
 );
 
 const Star: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+    />
   </svg>
 );
 
-
-
 const Menu: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M4 6h16M4 12h16M4 18h16"
+    />
   </svg>
 );
 
 const X: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M6 18L18 6M6 6l12 12"
+    />
   </svg>
 );
 
 const Phone: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+    />
   </svg>
 );
 
 const Mail: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+    />
   </svg>
 );
 
 const MapPin: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+    />
   </svg>
 );
 
@@ -62,14 +135,36 @@ const SevenLayersWebsite: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({});
+  const [activeTab, setActiveTab] = useState<'interior' | 'exterior'>('interior');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
   const router = useRouter();
+
+  // إغلاق modal بـ ESC key ومنع scroll
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedImage) {
+        setSelectedImage(null);
+      }
+    };
+
+    if (selectedImage) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden'; // منع scroll عند فتح modal
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedImage]);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Intersection Observer for animations
@@ -78,9 +173,9 @@ const SevenLayersWebsite: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(prev => ({
+            setIsVisible((prev) => ({
               ...prev,
-              [entry.target.id]: true
+              [entry.target.id]: true,
             }));
           }
         });
@@ -88,19 +183,43 @@ const SevenLayersWebsite: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('[id]');
-    elements.forEach(el => observer.observe(el));
+    const elements = document.querySelectorAll("[id]");
+    elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
   const values = [
-    { icon: <Star className="w-6 h-6" />, title: "الجودة", desc: "لا مساومة في التنفيذ" },
-    { icon: <CheckCircle className="w-6 h-6" />, title: "الالتزام", desc: "أساس كل شراكة ناجحة" },
-    { icon: <Building2 className="w-6 h-6" />, title: "السلامة", desc: "أولوية في كل موقع" },
-    { icon: <Eye className="w-6 h-6" />, title: "الشفافية", desc: "التعامل الصادق والواضح" },
-    { icon: <Target className="w-6 h-6" />, title: "الابتكار", desc: "حلول حديثة لمشاريع متجددة" },
-    { icon: <Users className="w-6 h-6 text-orange-500" />, title: "العمل الجماعي", desc: "روح الفريق تصنع الإنجاز" }
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "الجودة",
+      desc: "لا مساومة في التنفيذ",
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6" />,
+      title: "الالتزام",
+      desc: "أساس كل شراكة ناجحة",
+    },
+    {
+      icon: <Building2 className="w-6 h-6" />,
+      title: "السلامة",
+      desc: "أولوية في كل موقع",
+    },
+    {
+      icon: <Eye className="w-6 h-6" />,
+      title: "الشفافية",
+      desc: "التعامل الصادق والواضح",
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "الابتكار",
+      desc: "حلول حديثة لمشاريع متجددة",
+    },
+    {
+      icon: <Users className="w-6 h-6 text-orange-500" />,
+      title: "العمل الجماعي",
+      desc: "روح الفريق تصنع الإنجاز",
+    },
   ];
 
   const goals = [
@@ -108,335 +227,716 @@ const SevenLayersWebsite: React.FC = () => {
     "تسليم الأعمال في الوقت المحدد وضمن الميزانية المتفق عليها",
     "توسيع نطاق خدماتنا داخل وخارج المملكة",
     "تحقيق رضا العميل الكامل في جميع مراحل العمل",
-    "المساهمة في دعم رؤية السعودية 2030 من خلال تطوير البنية التحتية والمشاريع العمرانية"
+    "المساهمة في دعم رؤية السعودية 2030 من خلال تطوير البنية التحتية والمشاريع العمرانية",
   ];
 
+  // Project data
+  const projects: {
+    interior: Array<{ id: number; title: string; image: string }>;
+    exterior: Array<{ id: number; title: string; image: string }>;
+  } = {
+    interior: Array.from({ length: 22 }, (_, i) => ({
+      id: i + 1,
+      title: `تصميم داخلي ${i + 1}`,
+      image: `/inside/photo_${i + 1}.jpg`,
+    })),
+    exterior: Array.from({ length: 36 }, (_, i) => ({
+      id: i + 1,
+      title: `تصميم خارجي ${i + 1}`,
+      image: `/outside/photo_${i + 1}_2025-09-03_10-37-34.jpg`,
+    })),
+  };
+
+  const currentProjects = projects[activeTab];
+  const projectsPerSlide = 3;
+  const totalSlides = Math.ceil(currentProjects.length / projectsPerSlide);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const getCurrentProjects = () => {
+    const start = currentSlide * projectsPerSlide;
+    return currentProjects.slice(start, start + projectsPerSlide);
+  };
+
   return (
-    <div style={{ marginTop: '60px' }}> {/* Adjust margin to ensure it is below the navbar */}
-    <div className="min-h-screen bg-white" dir="rtl">
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
+    <div style={{ marginTop: "60px" }}>
+      {" "}
+      {/* Adjust margin to ensure it is below the navbar */}
+      <div className="min-h-screen bg-white" dir="rtl">
+        <style jsx>{`
+          @keyframes fade-in-up {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
-          to {
-            opacity: 1;
-            transform: translateY(0);
+
+          @keyframes float {
+            0%,
+            100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-10px) rotate(2deg);
+            }
           }
-        }
 
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px) rotate(0deg);
+          @keyframes slide-in {
+            from {
+              opacity: 0;
+              transform: translateX(50px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
           }
-          50% {
-            transform: translateY(-10px) rotate(2deg);
+
+          @keyframes scale-in {
+            from {
+              opacity: 0;
+              transform: scale(0.8);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
           }
-        }
 
-        @keyframes slide-in {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
+          .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
           }
-          to {
-            opacity: 1;
-            transform: translateX(0);
+
+          .animate-float {
+            animation: float 3s ease-in-out infinite;
           }
-        }
 
-        @keyframes scale-in {
-          from {
-            opacity: 0;
-            transform: scale(0.8);
+          .animate-slide-in {
+            animation: slide-in 0.6s ease-out;
           }
-          to {
-            opacity: 1;
-            transform: scale(1);
+
+          .animate-scale-in {
+            animation: scale-in 0.5s ease-out;
           }
-        }
 
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-        }
+          .hover-lift:hover {
+            transform: translateY(-5px);
+          }
 
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
+          .gradient-text {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
 
-        .animate-slide-in {
-          animation: slide-in 0.6s ease-out;
-        }
+          @font-face {
+            font-family: "PointArtSansSerifBold";
+            src: url("/fonts/PointArtSansSerifBold.ttf") format("truetype");
+            font-weight: bold;
+            font-style: normal;
+          }
 
-        .animate-scale-in {
-          animation: scale-in 0.5s ease-out;
-        }
+          .custom-title {
+            font-family: "PointArtSansSerifBold", sans-serif;
+          }
+        `}</style>
 
-        .hover-lift:hover {
-          transform: translateY(-5px);
-        }
+        {/* Hero Section */}
+        <section
+          id="home"
+          className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: "url(/bg.jpg)",
+              backgroundPosition: "center center",
+              backgroundSize: "cover",
+            }}
+          ></div>
 
-        .gradient-text {
-          background: linear-gradient(135deg, #f97316, #ea580c);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
+          <div className="absolute inset-0 bg-black/50"></div>
 
-        @font-face {
-          font-family: 'PointArtSansSerifBold';
-          src: url('/fonts/PointArtSansSerifBold.ttf') format('truetype');
-          font-weight: bold;
-          font-style: normal;
-        }
+          <div
+            className="absolute top-20 right-20 w-4 h-4 bg-orange-400/70 rounded-full animate-bounce"
+            style={{ animationDelay: "0s" }}
+          ></div>
+          <div
+            className="absolute top-40 right-40 w-3 h-3 bg-orange-300/70 rounded-full animate-bounce"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute bottom-40 right-60 w-5 h-5 bg-orange-500/70 rounded-full animate-bounce"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute top-32 left-20 w-6 h-6 bg-orange-400/50 rounded-full animate-bounce"
+            style={{ animationDelay: "1.5s" }}
+          ></div>
+          <div
+            className="absolute bottom-32 left-40 w-4 h-4 bg-orange-300/60 rounded-full animate-bounce"
+            style={{ animationDelay: "2.5s" }}
+          ></div>
 
-        .custom-title {
-          font-family: 'PointArtSansSerifBold', sans-serif;
-        }
-      `}</style>
-      
-      {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/bg.jpg)',
-          }}
-        ></div>
-        
-        <div className="absolute inset-0 bg-black/50"></div>
-        
-        <div className="absolute top-20 right-20 w-4 h-4 bg-orange-400/70 rounded-full animate-bounce" style={{animationDelay: '0s'}}></div>
-        <div className="absolute top-40 right-40 w-3 h-3 bg-orange-300/70 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-40 right-60 w-5 h-5 bg-orange-500/70 rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-32 left-20 w-6 h-6 bg-orange-400/50 rounded-full animate-bounce" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute bottom-32 left-40 w-4 h-4 bg-orange-300/60 rounded-full animate-bounce" style={{animationDelay: '2.5s'}}></div>
-        
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className={`mb-8 transform transition-all duration-1000 ${
-            isVisible.home ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-          }`}>
-
-            <Image
-              src="/logo.png"
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div
+              className={`mb-8 transform transition-all duration-1000 ${
+                isVisible.home ? "scale-100 opacity-100" : "scale-90 opacity-0"
+              }`}
+            >
+              <Image
+                src="/logo.png"
                 alt="شركة الطبقات السبعة"
-                width={160}   // add numeric width
-                height={160}  // add numeric height
+                width={160} // add numeric width
+                height={160} // add numeric height
                 className="mx-auto mb-6 animate-float"
               />
+            </div>
+
+            <div
+              className={`space-y-6 transform transition-all duration-1000 delay-300 ${
+                isVisible.home
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              {/* Update the title with the custom font */}
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up custom-title">
+                شركة الطبقات السبعة
+              </h1>
+
+              <div className="w-24 h-2.888c bg-orange-500 mx-auto animate-pulse"></div>
+
+              <p
+                className="text-xl md:text-2xl lg:text-3xl text-orange-400 font-semibold animate-fade-in-up"
+                style={{ animationDelay: "0.2s" }}
+              >
+                نبني بثقة ... من التصميم إلى الإنجاز
+              </p>
+
+              <p
+                className="text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto animate-fade-in-up"
+                style={{ animationDelay: "0.4s" }}
+              >
+                نوفر لك مستوى راقيًا من الراحة والجودة في البناء والتشييد
+              </p>
+
+              <div
+                className="flex flex-wrap justify-center gap-4 pt-8 animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
+                <button
+                  className="border-2 border-white/80 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-500 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  aria-label="انتقل إلى قسم المشاريع"
+                  onClick={() => {
+                    const projectsSection = document.getElementById('projects');
+                    if (projectsSection) {
+                      const offset = 80;
+                      const elementPosition = projectsSection.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - offset;
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                      });
+                    }
+                  }}
+                >
+                  مشاريعنا
+                </button>
+              </div>
+            </div>
           </div>
-          
-          <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${
-            isVisible.home ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            {/* Update the title with the custom font */}
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight animate-fade-in-up custom-title">
-              شركة الطبقات السبعة
-            </h1>
-            
-            <div className="w-24 h-2.888c bg-orange-500 mx-auto animate-pulse"></div>
-            
-            <p className="text-xl md:text-2xl lg:text-3xl text-orange-400 font-semibold animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              نبني بثقة ... من التصميم إلى الإنجاز
-            </p>
-            
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              نوفر لك مستوى راقيًا من الراحة والجودة في البناء والتشييد
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4 pt-8 animate-fade-in-up" style={{animationDelay: '0.6s'}}>      
-              <button className="border-2 border-white/80 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-500 transition-all duration-300 hover:scale-105"
-              onClick={() => router.push('/projects')}>
-                مشاريعنا
+
+          <div
+            className="absolute top-1/2 left-6 transform -translate-y-1/2 flex flex-col space-y-4 animate-fade-in-up"
+            style={{ animationDelay: "1s" }}
+          ></div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              className={`text-center mb-16 transform transition-all duration-1000 ${
+                isVisible.about
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                من نحن
+              </h2>
+              <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div
+                className={`space-y-6 transform transition-all duration-1000 delay-200 ${
+                  isVisible.about
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-10 opacity-0"
+                }`}
+              >
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  نحن شركة الطبقات السبعة للمقاولات، شركة رائدة في قطاع البناء
+                  والتشييد، نقدم باقة متكاملة من خدمات المقاولات تبدأ من التصميم
+                  الهندسي وصولًا إلى الإنجاز الكامل. نمتلك سجلًا غنيًا بالمشاريع
+                  المنجزة بكفاءة وجودة، ونحرص على تقديم حلول هندسية مدروسة تلائم
+                  احتياجات كل عميل.
+                </p>
+
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  منذ انطلاقتنا، اعتمدنا على أسس قوية من الاحترافية، الالتزام،
+                  والابتكار، مما جعلنا خيارًا موثوقًا للأفراد، الشركات،
+                  والمطورين في مختلف مناطق المملكة.
+                </p>
+              </div>
+
+              <div
+                className={`grid grid-cols-2 gap-6 transform transition-all duration-1000 delay-400 ${
+                  isVisible.about
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-10 opacity-0"
+                }`}
+              >
+                <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors">
+                    <Building2 className="w-8 h-8 text-orange-500 group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    خبرة عالية
+                  </h3>
+                  <p className="text-gray-600">
+                    سنوات من الخبرة في البناء والتشييد
+                  </p>
+                </div>
+
+                <div
+                  className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors">
+                    <CheckCircle className="w-8 h-8 text-orange-500 group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                    جودة مضمونة
+                  </h3>
+                  <p className="text-gray-600">
+                    التزام بأعلى معايير الجودة والسلامة
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16">
+              <div
+                id="mission"
+                className={`text-center lg:text-right transform transition-all duration-1000 ${
+                  isVisible.mission
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-10 opacity-0"
+                }`}
+              >
+                <div className="inline-block p-4 bg-orange-100 rounded-full mb-6 hover:bg-orange-500 hover:scale-110 transition-all duration-300 group">
+                  <Target className="w-12 h-12 text-orange-500 group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 gradient-text">
+                  رسالتنا
+                </h3>
+                <div className="bg-orange-50 p-8 rounded-xl border-r-4 border-orange-500 hover:shadow-lg transition-all duration-300 hover:border-orange-600">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    تقديم خدمات مقاولات متكاملة وعالية الجودة، تبدأ من الفكرة
+                    وتنتهي بتسليم مشروع متقن، مع الالتزام التام بالمواعيد،
+                    والمعايير الهندسية، ورضا العميل في كل مرحلة.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                id="vision"
+                className={`text-center lg:text-right transform transition-all duration-1000 delay-200 ${
+                  isVisible.vision
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-10 opacity-0"
+                }`}
+              >
+                <div className="inline-block p-4 bg-orange-100 rounded-full mb-6 hover:bg-orange-500 hover:scale-110 transition-all duration-300 group">
+                  <Eye className="w-12 h-12 text-orange-500 group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-800 mb-6 gradient-text">
+                  رؤيتنا
+                </h3>
+                <div className="bg-gray-50 p-8 rounded-xl border-r-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:border-gray-600">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    أن نكون من بين الشركات الأكثر تأثيرًا وموثوقية في تطوير
+                    البنية التحتية والمشاريع العمرانية داخل المملكة العربية
+                    السعودية، وأن نُعرف بجودة التنفيذ وابتكار الحلول الهندسية،
+                    مساهمين بفعالية في تحقيق أهداف رؤية السعودية 2030 نحو تنمية
+                    مستدامة وبنية تحتية عصرية.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Goals */}
+        <section id="goals" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              className={`text-center mb-16 transform transition-all duration-1000 ${
+                isVisible.goals
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                أهدافنا
+              </h2>
+              <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
+            </div>
+
+            <div className="space-y-6">
+              {goals.map((goal, index) => (
+                <div
+                  key={index}
+                  className={`bg-white p-6 rounded-xl shadow-lg border-r-4 border-orange-500 hover:shadow-xl transition-shadow duration-300 ${
+                    isVisible.goals
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-10 opacity-0"
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex items-start space-x-4 space-x-reverse">
+                    <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      {index + 1}
+                    </div>
+                    <p className="text-lg text-gray-700 leading-relaxed mr-3">
+                      {goal}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Values */}
+        <section id="values" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              className={`text-center mb-16 transform transition-all duration-1000 ${
+                isVisible.values
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                قيمنا
+              </h2>
+              <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {values.map((value, index) => (
+                <div
+                  key={index}
+                  className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-200 group hover:scale-105 transform ${
+                    isVisible.values
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-10 opacity-0"
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="text-center space-y-4">
+                    <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto group-hover:bg-orange-500 transition-all duration-300 group-hover:rotate-12">
+                      <div className="text-orange-500 group-hover:text-white transition-colors">
+                        {value.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors">
+                      {value.title}
+                    </h3>
+                    <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
+                      {value.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-20 px-4 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden" dir="rtl">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-20 right-20 w-32 h-32 bg-orange-500 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-20 w-40 h-40 bg-orange-600 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-orange-400 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            {/* Section Header */}
+            <div
+              className={`text-center mb-16 transform transition-all duration-1000 ${
+                isVisible.projects
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              <div className="inline-block">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                  مشاريعنا
+                </h2>
+                <div className="w-24 h-1.5 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6 rounded-full"></div>
+              </div>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+                نفخر بتقديم أفضل التصاميم المعمارية والداخلية التي تجمع بين الأصالة والحداثة
+                <br />
+                <span className="text-orange-600">لنحول أحلامكم إلى واقع معماري مميز</span>
+              </p>
+            </div>
+
+            {/* Tab Navigation */}
+            <div className="flex justify-center mb-12">
+              <div className="bg-white rounded-full p-2 shadow-lg border border-slate-200">
+                <button
+                  onClick={() => {
+                    setActiveTab('interior');
+                    setCurrentSlide(0);
+                  }}
+                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
+                    activeTab === 'interior'
+                      ? 'bg-gradient-to-r from-yellow-500 to-orange-600 text-white shadow-lg transform scale-105'
+                      : 'text-slate-600 hover:text-orange-500 hover:bg-slate-50'
+                  }`}
+                >
+                  تصميم داخلي
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveTab('exterior');
+                    setCurrentSlide(0);
+                  }}
+                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
+                    activeTab === 'exterior'
+                      ? 'bg-gradient-to-r from-yellow-500 to-orange-600 text-white shadow-lg transform scale-105'
+                      : 'text-slate-600 hover:text-orange-500 hover:bg-slate-50'
+                  }`}
+                >
+                  تصميم خارجي
+                </button>
+              </div>
+            </div>
+
+            {/* Projects Grid with Enhanced Slider */}
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {getCurrentProjects().map((project: { id: number; title: string; image: string }, index: number) => (
+                  <div
+                    key={project.id}
+                    className={`group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-3 hover:scale-105 ${
+                      isVisible.projects
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-10 opacity-0"
+                    }`}
+                    style={{
+                      animationDelay: `${index * 0.1}s`
+                    }}
+                  >
+                    <div className="relative overflow-hidden h-80">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/api/placeholder/400/300';
+                        }}
+                      />
+                      
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <button
+                            onClick={() => setSelectedImage({ src: project.image, title: project.title })}
+                            className="p-4 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 hover:scale-110 transition-all duration-300 border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/50"
+                            aria-label={`عرض ${project.title}`}
+                            title="عرض الصورة"
+                          >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Enhanced Navigation Arrows */}
+              {totalSlides > 1 && (
+                <>
+                  <button
+                    onClick={prevSlide}
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-6 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 text-gray-600 hover:text-orange-500 z-20 border border-gray-100 hover:border-orange-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={currentSlide === 0}
+                  >
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-6 bg-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 text-gray-600 hover:text-orange-500 z-20 border border-gray-100 hover:border-orange-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={currentSlide === totalSlides - 1}
+                  >
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Enhanced Slide Indicators */}
+            {totalSlides > 1 && (
+              <div className="flex justify-center gap-3 mb-12">
+                {Array.from({ length: totalSlides }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`transition-all duration-300 rounded-full ${
+                      currentSlide === index
+                        ? 'w-12 h-4 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-110'
+                        : 'w-4 h-4 bg-gray-300 hover:bg-orange-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* View All Projects Button */}
+            <div className="text-center">
+              <button
+                onClick={() => router.push('/projects')}
+                className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                عرض جميع المشاريع
               </button>
             </div>
           </div>
-        </div>
-        
-        <div className="absolute top-1/2 left-6 transform -translate-y-1/2 flex flex-col space-y-4 animate-fade-in-up" style={{animationDelay: '1s'}}>
-        </div>
-        
-      </section>
+        </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
-            isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">من نحن</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className={`space-y-6 transform transition-all duration-1000 delay-200 ${
-              isVisible.about ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-            }`}>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                نحن شركة الطبقات السبعة للمقاولات، شركة رائدة في قطاع البناء والتشييد، نقدم باقة متكاملة من خدمات المقاولات تبدأ من التصميم الهندسي وصولًا إلى الإنجاز الكامل. نمتلك سجلًا غنيًا بالمشاريع المنجزة بكفاءة وجودة، ونحرص على تقديم حلول هندسية مدروسة تلائم احتياجات كل عميل.
-              </p>
-              
-              <p className="text-lg text-gray-700 leading-relaxed">
-                منذ انطلاقتنا، اعتمدنا على أسس قوية من الاحترافية، الالتزام، والابتكار، مما جعلنا خيارًا موثوقًا للأفراد، الشركات، والمطورين في مختلف مناطق المملكة.
-              </p>
+        {/* Contact Section */}
+        <section id="contact" className="py-20 bg-gray-900 text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              className={`text-center mb-16 transform transition-all duration-1000 ${
+                isVisible.contact
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
+              }`}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                تواصل معنا
+              </h2>
+              <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
             </div>
-            
-            <div className={`grid grid-cols-2 gap-6 transform transition-all duration-1000 delay-400 ${
-              isVisible.about ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}>
-              <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors">
-                  <Building2 className="w-8 h-8 text-orange-500 group-hover:text-white transition-colors" />
+
+            <div className="grid lg:grid-cols-3 gap-8 text-center">
+              <div className="space-y-4">
+                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto">
+                  <Phone className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">خبرة عالية</h3>
-                <p className="text-gray-600">سنوات من الخبرة في البناء والتشييد</p>
+                <h3 className="text-xl font-bold">اتصل بنا</h3>
+                <p className="text-gray-300 mb-1"> 966536581079 +</p>
+                <p className="text-gray-300">966536841337 +</p>
               </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 group" style={{animationDelay: '0.2s'}}>
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors">
-                  <CheckCircle className="w-8 h-8 text-orange-500 group-hover:text-white transition-colors" />
+
+              <div className="space-y-4">
+                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto">
+                  <Mail className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">جودة مضمونة</h3>
-                <p className="text-gray-600">التزام بأعلى معايير الجودة والسلامة</p>
+                <h3 className="text-xl font-bold">البريد الإلكتروني</h3>
+                <p className="text-gray-300">7tabaqat@gmail.com</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div id="mission" className={`text-center lg:text-right transform transition-all duration-1000 ${
-              isVisible.mission ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-            }`}>
-              <div className="inline-block p-4 bg-orange-100 rounded-full mb-6 hover:bg-orange-500 hover:scale-110 transition-all duration-300 group">
-                <Target className="w-12 h-12 text-orange-500 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-6 gradient-text">رسالتنا</h3>
-              <div className="bg-orange-50 p-8 rounded-xl border-r-4 border-orange-500 hover:shadow-lg transition-all duration-300 hover:border-orange-600">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  تقديم خدمات مقاولات متكاملة وعالية الجودة، تبدأ من الفكرة وتنتهي بتسليم مشروع متقن، مع الالتزام التام بالمواعيد، والمعايير الهندسية، ورضا العميل في كل مرحلة.
-                </p>
-              </div>
-            </div>
-
-            <div id="vision" className={`text-center lg:text-right transform transition-all duration-1000 delay-200 ${
-              isVisible.vision ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-            }`}>
-              <div className="inline-block p-4 bg-orange-100 rounded-full mb-6 hover:bg-orange-500 hover:scale-110 transition-all duration-300 group">
-                <Eye className="w-12 h-12 text-orange-500 group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-6 gradient-text">رؤيتنا</h3>
-              <div className="bg-gray-50 p-8 rounded-xl border-r-4 border-gray-500 hover:shadow-lg transition-all duration-300 hover:border-gray-600">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  أن نكون من بين الشركات الأكثر تأثيرًا وموثوقية في تطوير البنية التحتية والمشاريع العمرانية داخل المملكة العربية السعودية، وأن نُعرف بجودة التنفيذ وابتكار الحلول الهندسية، مساهمين بفعالية في تحقيق أهداف رؤية السعودية 2030 نحو تنمية مستدامة وبنية تحتية عصرية.
+              <div className="space-y-4">
+                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto">
+                  <MapPin className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold">العنوان</h3>
+                <p className="text-gray-300">
+                  المملكة العربية السعودية - الرياض - حي الريان
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <Footer />
 
-      {/* Goals */}
-      <section id="goals" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
-            isVisible.goals ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">أهدافنا</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
-          </div>
-          
-          <div className="space-y-6">
-            {goals.map((goal, index) => (
-              <div key={index} className={`bg-white p-6 rounded-xl shadow-lg border-r-4 border-orange-500 hover:shadow-xl transition-shadow duration-300 ${
-                isVisible.goals ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`} style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                    {index + 1}
-                  </div>
-                  <p className="text-lg text-gray-700 leading-relaxed">{goal}</p>
+        {/* Image Modal */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative max-w-7xl mx-auto px-4">
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 z-10 p-3 bg-white/20 hover:bg-white/30 rounded-full text-white transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                aria-label="إغلاق الصورة"
+                title="إغلاق (ESC)"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div
+                className="relative max-h-[90vh] w-full"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.title}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto rounded-lg object-contain max-h-[90vh]"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/api/placeholder/1200/800';
+                  }}
+                />
+                <div className="mt-4 text-center">
+                  <p className="text-white text-xl font-semibold">{selectedImage.title}</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section id="values" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
-            isVisible.values ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">قيمنا</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className={`bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-200 group hover:scale-105 transform ${
-                isVisible.values ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`} style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto group-hover:bg-orange-500 transition-all duration-300 group-hover:rotate-12">
-                    <div className="text-orange-500 group-hover:text-white transition-colors">
-                      {value.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors">{value.title}</h3>
-                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors">{value.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
-            isVisible.contact ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">تواصل معنا</h2>
-            <div className="w-20 h-1 bg-orange-500 mx-auto animate-pulse"></div>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8 text-center">
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto">
-                <Phone className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold">اتصل بنا</h3>
-              <p className="text-gray-300 mb-1"> 966536581079 +</p>
-              <p className="text-gray-300">966536841337 +</p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto">
-                <Mail className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold">البريد الإلكتروني</h3>
-              <p className="text-gray-300">7tabaqat@gmail.com</p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto">
-                <MapPin className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold">العنوان</h3>
-              <p className="text-gray-300">المملكة العربية السعودية - الرياض - حي الريان</p>
             </div>
           </div>
-        </div>
-      </section>
-      <Footer />
-    </div>
+        )}
+      </div>
     </div>
   );
 };
