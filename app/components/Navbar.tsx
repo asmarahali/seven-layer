@@ -168,7 +168,7 @@ const Navbar = () => {
                 href="https://wa.me/966536581079"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-3 inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold shadow hover:scale-[1.02] transition-transform duration-200"
+                className="ml-3 inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:scale-[1.02] transition-transform duration-200"
               >
                 تواصل معنا
               </Link>
