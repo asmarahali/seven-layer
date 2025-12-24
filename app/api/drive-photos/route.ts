@@ -38,9 +38,9 @@ async function getPhotosFromFolder(folderId: string): Promise<DrivePhoto[]> {
     return response.data.files?.map(file => ({
       id: file.id!,
       name: file.name!,
-      webViewLink: file.webViewLink,
-      webContentLink: file.webContentLink,
-      thumbnailLink: file.thumbnailLink,
+      webViewLink: file.webViewLink ?? undefined,
+      webContentLink: file.webContentLink ?? undefined,
+      thumbnailLink: file.thumbnailLink ?? undefined,
     })) || [];
   } catch (error) {
     console.error('Error fetching photos:', error); // Log full error object
